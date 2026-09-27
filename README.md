@@ -7,7 +7,9 @@ Served through jsDelivr straight from this repo.
 
 List + calendar view of upcoming practices and matches, styled with the
 [Gotham Knights design system](https://github.com/ptcrash/gotham-rugby-design-system).
-Renders inside a shadow root so Squarespace CSS can't touch it.
+Renders inside a shadow root so Squarespace CSS can't touch it. Follows the Squarespace
+section theme automatically (dark sections → navy register, light sections → paper register);
+force one with `data-theme="light"` or `"dark"` on the root div.
 
 **Embed (Squarespace Code Block):**
 
@@ -26,3 +28,10 @@ After every data change: commit, push, update the SHA in the Code Block.
 - `loc`: field name, or `""` for TBA. Only list a location once the permit is confirmed.
 
 **Roadmap:** replace `EVENTS` with a fetch from the club's public Google Calendars (or a small service in front of them).
+
+## Credit
+
+Inspired by [SimonCzaplinski/nyifc-widget](https://github.com/SimonCzaplinski/nyifc-widget),
+the hand-rolled schedule widget behind [NY International FC](https://www.nyintfc.com). Same idea —
+one small JS file, GitHub as the CMS, jsDelivr as the CDN, list-first with a calendar view — rebuilt
+on the Gotham Knights design system. Thanks, Simon.

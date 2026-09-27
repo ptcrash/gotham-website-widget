@@ -49,6 +49,13 @@
     l.href = "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap";
     document.head.appendChild(l);
   }
+  // Theme: set data-theme="light|dark" on the root div to force it; otherwise
+  // follow the Squarespace section theme (dark/black/bright → dark, else light).
+  if (!host.getAttribute("data-theme")) {
+    var sec = host.closest("[data-section-theme]");
+    var st = sec ? sec.getAttribute("data-section-theme") : "dark";
+    host.setAttribute("data-theme", /^(dark|black|bright)(-bold)?$/.test(st) ? "dark" : "light");
+  }
   var shadow = host.attachShadow({ mode: "open" });
   var MN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var MNL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -124,6 +131,40 @@ h2{font-weight:800;font-size:2rem;line-height:1.1;color:var(--white);margin-top:
 .daylist{margin-top:12px;display:grid;gap:8px}\
 .legend{display:flex;gap:14px;justify-content:center;margin-top:12px;font-size:.75rem;color:var(--navy-200)}\
 .legend span{display:inline-flex;align-items:center;gap:6px}.legend i{width:8px;height:8px;border-radius:50%;display:inline-block}\
+\
+:host([data-theme="light"]){--ink-900:#11151f;--ink-700:#353b49;--ink-500:#5d6473;--ink-300:#b6bcc8;--ink-200:#dde0e7;--ink-100:#eef0f4;--paper-2:#f3ecdc;--gold-700:#b8810a;\
+color:var(--ink-700);--border:var(--ink-200);--border-strong:var(--ink-300);--c-practice:var(--navy-500)}\
+:host([data-theme="light"]) .eyebrow{color:var(--gold-700)}\
+:host([data-theme="light"]) h2{color:var(--navy-700)}\
+:host([data-theme="light"]) .chip{color:var(--ink-700);border-color:var(--ink-300)}\
+:host([data-theme="light"]) .chip[aria-pressed="true"]{background:var(--navy-700);color:var(--white);border-color:var(--navy-700)}\
+:host([data-theme="light"]) .chip[data-k="practice"] .dot{background:var(--navy-500)}\
+:host([data-theme="light"]) .tab{background:var(--ink-100);color:var(--ink-700)}\
+:host([data-theme="light"]) .tab[aria-selected="true"]{background:var(--navy-700);color:var(--white)}\
+:host([data-theme="light"]) .row{background:var(--white);border-color:var(--ink-200);border-left-color:var(--tc);box-shadow:0 2px 6px rgba(7,17,42,.08)}\
+:host([data-theme="light"]) .date .m{color:var(--gold-700)}\
+:host([data-theme="light"]) .date .d{color:var(--navy-700)}\
+:host([data-theme="light"]) .date .w{color:var(--ink-500)}\
+:host([data-theme="light"]) .name{color:var(--navy-700)}\
+:host([data-theme="light"]) .meta{color:var(--ink-500)}\
+:host([data-theme="light"]) .meta .t{color:var(--ink-900)}\
+:host([data-theme="light"]) .meta .tba{color:var(--ink-500)}\
+:host([data-theme="light"]) .type{color:var(--tc)}\
+:host([data-theme="light"]) .row[style*="c-match"] .type{color:var(--gold-700)}\
+:host([data-theme="light"]) .ha.away{color:var(--navy-700);border-color:var(--ink-300)}\
+:host([data-theme="light"]) .btn.ghost{color:var(--navy-700);border-color:var(--ink-300)}\
+:host([data-theme="light"]) .btn.ghost:hover{background:var(--ink-100)}\
+:host([data-theme="light"]) .empty{border-color:var(--ink-300);color:var(--ink-500)}\
+:host([data-theme="light"]) .cal{background:var(--white);border-color:var(--ink-200)}\
+:host([data-theme="light"]) .calhead h3{color:var(--navy-700)}\
+:host([data-theme="light"]) .nav{color:var(--navy-700);border-color:var(--ink-300)}\
+:host([data-theme="light"]) .nav:hover{background:var(--ink-100)}\
+:host([data-theme="light"]) .dow{color:var(--ink-500)}\
+:host([data-theme="light"]) .day{background:var(--ink-100);color:var(--ink-500)}\
+:host([data-theme="light"]) .day.has{background:var(--white);color:var(--navy-700);border-color:var(--ink-200)}\
+:host([data-theme="light"]) .day.has:hover{background:var(--paper-2)}\
+:host([data-theme="light"]) .day.sel{background:var(--navy-700);color:var(--white)}\
+:host([data-theme="light"]) .legend{color:var(--ink-500)}\
 @media (max-width:520px){.row{gap:12px;padding:12px}.name{font-size:1rem}.ha{display:none}h2{font-size:1.625rem}.day{min-height:34px;font-size:.75rem}}\
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}';
 
