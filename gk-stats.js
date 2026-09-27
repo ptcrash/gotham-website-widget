@@ -9,7 +9,7 @@
 
   var STATS = [
     { n: "2001", l: "Founded" },
-    { n: "2", l: "Competitive sides" },
+    { n: "60+", l: "Players" },
     { n: "2026", l: "Bingham Shield champions" }
   ];
 
