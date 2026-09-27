@@ -25,7 +25,7 @@ After every data change: commit, push, update the SHA in the Code Block.
 - `t`: `"match"` or `"practice"`
 - `n`: match title `"v Opponent"` (home) or `"@ Opponent"` (away); `"Playoffs"` etc. for placeholders
 - `time`: `"7:00 PM"` or `""` for TBA
-- `loc`: field name, or `""` for TBA. Only list a location once the permit is confirmed.
+- `loc`: venue, or `""` for TBA (matches). Practices are always "Randall's Island · Field NN"; use "Randall's Island · Field TBA" until the permit is confirmed.
 
 **Roadmap:** replace `EVENTS` with a fetch from the club's public Google Calendars (or a small service in front of them).
 
