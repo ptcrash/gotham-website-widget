@@ -29,6 +29,11 @@ After every data change: commit, push, update the SHA in the Code Block.
 
 **Roadmap:** replace `EVENTS` with a fetch from the club's public Google Calendars (or a small service in front of them).
 
+## gk-stats.js — stat row
+
+Three mono figures with uppercase labels, for the navy "We Are Knights" band on the homepage.
+Edit the `STATS` array. Same embed pattern: `<div id="gk-stats-root"></div>` + pinned script tag.
+
 ## Credit
 
 Inspired by [SimonCzaplinski/nyifc-widget](https://github.com/SimonCzaplinski/nyifc-widget),
