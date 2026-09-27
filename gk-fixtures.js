@@ -80,7 +80,7 @@
 --border:rgba(255,255,255,.14);--border-strong:rgba(255,255,255,.28);--c-match:var(--gold-500);--c-practice:var(--blue);\
 font-family:var(--font);color:var(--navy-100);font-size:16px;line-height:1.4;-webkit-font-smoothing:antialiased}\
 *{box-sizing:border-box;margin:0;padding:0}\
-.wrap{max-width:760px;margin:0 auto}\
+.wrap{max-width:760px;margin:0 auto;padding:40px 0 16px}\
 .head{text-align:center;margin-bottom:22px}\
 .eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-500)}\
 h2{font-weight:800;font-size:2rem;line-height:1.1;color:var(--white);margin-top:6px;letter-spacing:-.01em;text-wrap:balance}\
